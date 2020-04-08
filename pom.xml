@@ -16,6 +16,10 @@
 
     <properties>
         <java.version>11</java.version>
+<!--        <thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>-->
+        <!-- 布局功能的支持程序  thymeleaf3主程序  layout2以上版本 -->
+        <!-- thymeleaf2   layout1-->
+<!--        <thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>-->
     </properties>
 
     <dependencies>
@@ -34,6 +38,12 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <!--    3.0.11        -->
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
     </dependencies>
 
