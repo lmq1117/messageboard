@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;padding: 0;
+            box-sizing: border-box;
+        }
+        .message{
+            width: 500px;
+            height: 100px;
+            display: flex;
+            flex-direction:column;
+            border-bottom: 1px dashed #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h2 th:text="${hello}">留言板 </h2>
+<hr>
+    <div th:each="msg : ${messages}" class="message">
+        <div class="title">
+            <span th:text="${msg.getId()}">user1</span><span style="margin-left:10px;" th:text="${msg.getTitle()}">说了啥标题</span>
+        </div>|
+        <div th:text="${msg.getContent()}" class="content">说了啥内容</div>
+    </div>
+
+    <div class="new-message">
+        <form action="/msg" method="get">
+            用户名<input type="text" name="name"><br/>
+            标题 <input type="text" name="title"><br/>
+            内容 <input type="text" name="content"><br/>
+            <input type="submit" name="发表" />
+        </form>
+    </div>
+</body>
+</html>
